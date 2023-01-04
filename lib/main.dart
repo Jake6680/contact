@@ -32,97 +32,6 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
 
-    // return MaterialApp(
-    //   home: Scaffold(
-    //
-    //     appBar: AppBar(
-    //       title: Text('앱임')
-    //     ),
-    //
-    //
-    //
-    //     body: Container(
-    //       padding: EdgeInsets.all(30),
-    //       margin: EdgeInsets.fromLTRB(15, 5, 15, 0),
-    //       width: double.infinity,
-    //       height: 250,
-    //       decoration: BoxDecoration(
-    //         border: Border(
-    //           bottom: BorderSide(color: Colors.grey),
-    //           top: BorderSide(color: Colors.grey),
-    //         ),
-    //       ),
-    //       child: Row(
-    //         children: [
-    //           Container(
-    //             margin: EdgeInsets.fromLTRB(0, 0, 5, 0),
-    //             width: 200,
-    //             height: double.infinity,
-    //             decoration: BoxDecoration(
-    //               borderRadius: BorderRadius.all(Radius.circular(13.0)),
-    //               image: DecorationImage(image: AssetImage('Logo.png')),
-    //             ),
-    //           ),
-    //           SizedBox(
-    //             width: 500,
-    //             height: double.infinity,
-    //             child: Column(
-    //               crossAxisAlignment: CrossAxisAlignment.start,
-    //               children: [
-    //                 SizedBox(
-    //                   height: 60,
-    //                   child: Text('캐논 DSLR 100D (단렌즈, 충전기 16기가SD 포함)',
-    //                     style: TextStyle( fontSize: 20, fontWeight: FontWeight.w500 ),
-    //                   ),
-    //                 ),
-    //                 SizedBox(
-    //                   height: 30,
-    //                   child: Text('성동구 행당동 . 끌올 10분 전',
-    //                   style: TextStyle( color: Colors.grey ),
-    //                   ),
-    //                 ),
-    //                 SizedBox(
-    //                   height: 30,
-    //                   child: Text('210,000원',
-    //                   style: TextStyle( fontWeight: FontWeight.w600, fontSize: 20 ),
-    //                   ),
-    //                 ),
-    //                 SizedBox(
-    //                   child: Row(
-    //                     crossAxisAlignment: CrossAxisAlignment.end,
-    //                     children: [
-    //                       SizedBox(
-    //                         child: Icon(Icons.heart_broken),
-    //                       ),
-    //                       SizedBox(
-    //                         child: Text('4', style: ),
-    //                       )
-    //                     ],
-    //                   ),
-    //                 ),
-    //               ],
-    //             ),
-    //           )
-    //         ],
-    //       ),
-    //     ),
-    //
-    //
-    //     bottomNavigationBar: BottomAppBar(
-    //       child: SizedBox(
-    //         height: 70,
-    //         child: Row(
-    //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    //           children: [
-    //             Icon(Icons.phone),
-    //             Icon(Icons.message),
-    //             Icon(Icons.contact_page),
-    //           ],
-    //         ),
-    //       ),
-    //     ),
-    //   )
-    // );
 
     return Scaffold(
         floatingActionButton: FloatingActionButton(
@@ -196,3 +105,97 @@ class Shop extends StatelessWidget {
     );
   }
 }
+
+
+
+// return MaterialApp(
+//   home: Scaffold(
+//
+//     appBar: AppBar(
+//       title: Text('앱임')
+//     ),
+//
+//
+//
+//     body: Container(
+//       padding: EdgeInsets.all(30),
+//       margin: EdgeInsets.fromLTRB(15, 5, 15, 0),
+//       width: double.infinity,
+//       height: 250,
+//       decoration: BoxDecoration(
+//         border: Border(
+//           bottom: BorderSide(color: Colors.grey),
+//           top: BorderSide(color: Colors.grey),
+//         ),
+//       ),
+//       child: Row(
+//         children: [
+//           Container(
+//             margin: EdgeInsets.fromLTRB(0, 0, 5, 0),
+//             width: 200,
+//             height: double.infinity,
+//             decoration: BoxDecoration(
+//               borderRadius: BorderRadius.all(Radius.circular(13.0)),
+//               image: DecorationImage(image: AssetImage('Logo.png')),
+//             ),
+//           ),
+//           SizedBox(
+//             width: 500,
+//             height: double.infinity,
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 SizedBox(
+//                   height: 60,
+//                   child: Text('캐논 DSLR 100D (단렌즈, 충전기 16기가SD 포함)',
+//                     style: TextStyle( fontSize: 20, fontWeight: FontWeight.w500 ),
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 30,
+//                   child: Text('성동구 행당동 . 끌올 10분 전',
+//                   style: TextStyle( color: Colors.grey ),
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 30,
+//                   child: Text('210,000원',
+//                   style: TextStyle( fontWeight: FontWeight.w600, fontSize: 20 ),
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   child: Row(
+//                     crossAxisAlignment: CrossAxisAlignment.end,
+//                     children: [
+//                       SizedBox(
+//                         child: Icon(Icons.heart_broken),
+//                       ),
+//                       SizedBox(
+//                         child: Text('4', style: ),
+//                       )
+//                     ],
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           )
+//         ],
+//       ),
+//     ),
+//
+//
+//     bottomNavigationBar: BottomAppBar(
+//       child: SizedBox(
+//         height: 70,
+//         child: Row(
+//           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//           children: [
+//             Icon(Icons.phone),
+//             Icon(Icons.message),
+//             Icon(Icons.contact_page),
+//           ],
+//         ),
+//       ),
+//     ),
+//   )
+// );
