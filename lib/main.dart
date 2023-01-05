@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:contacts_service/contacts_service.dart';
+
 
 void main() {
   runApp(MaterialApp(
@@ -16,9 +19,33 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  getPermission() async {
+    var status = await Permission.contacts.status;
+    if (status.isGranted) {
+      print('허락됨');
+      var contact = await ContactsService.getContacts();
+      setState(() {
+        name = contact;
+      });
+      // print(contact[0].~~~); ~~는 걍 쓴거임
+    } else if (status.isDenied) {
+      print('거절됨');
+      Permission.contacts.request();
+      openAppSettings();
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getPermission();
+  }
+
+
   var total = 3;
   var a = 1;
-  var name = ['홍길동', '김영숙', '피자집'];
+  List<Contact> name = [];
   addOne(){
     setState(() {
       total++;
@@ -41,13 +68,17 @@ class _MyAppState extends State<MyApp> {
             });
           },
         ),
-        appBar: AppBar(title: Text(total.toString())),
+        appBar: AppBar(title: Text(total.toString()), actions: [
+          IconButton(onPressed: (){
+            getPermission();
+          }, icon: Icon(Icons.contacts))
+        ],),
         body: ListView.builder(
           itemCount: name.length,
           itemBuilder: (c, i){
             return ListTile(
               leading: Icon(Icons.person, color: Colors.black),
-              title: Text(name[i]),
+              title: Text(name[i].givenName ?? '이름없는놈'),
             );
           },
         ),
@@ -75,7 +106,12 @@ class DialogUI extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TextField( controller: inputData, ),
-            TextButton(onPressed:(){ addOne(); addName(inputData.text); }, child: Text('완료')),
+            TextButton(onPressed:(){
+              var newContact = Contact();
+              newContact.givenName = inputData.text;  //새로운 연락처 만들기
+              ContactsService.addContact(newContact);  //실제로 연락처에 집어넣기
+              addName(newContact);
+              }, child: Text('완료')),
             TextButton(onPressed: (){Navigator.pop(context);}, child: Text('취소'))
           ],
         ),
